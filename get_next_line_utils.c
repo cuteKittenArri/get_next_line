@@ -6,7 +6,7 @@
 /*   By: stmuller <stmuller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/02 15:25:06 by stmuller          #+#    #+#             */
-/*   Updated: 2025/11/04 00:57:32 by stmuller         ###   ########.fr       */
+/*   Updated: 2025/11/04 02:04:33 by stmuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ char	*ft_strjoin(char *s1, char *s2)
 	size_t	i;
 	size_t	j;
 
-	if(!s1 || !s2)
-		return(0);
 	i = ft_strlen(s1) + ft_strlen(s2);
 	str = malloc((i + 1) * sizeof(char));
 	if (!str)
@@ -44,8 +42,8 @@ size_t	ft_strlen(char *str)
 {
 	size_t	i;
 
-	if(!str)
-		return(0);
+	if (!str)
+		return (0);
 	i = 0;
 	while (str[i])
 		i++;
@@ -54,10 +52,10 @@ size_t	ft_strlen(char *str)
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t			i;
-	unsigned char	*r;
+	size_t	i;
+	char	*r;
 
-	r = s;
+	r = (char *)s;
 	i = 0;
 	while (i < n)
 	{
@@ -89,15 +87,13 @@ void	*ft_calloc(size_t nmemb, size_t size)
 char	*ft_strchr(const char *string, int tosearch)
 {
 	char			*str;
-	unsigned char	c;
 
-	if(!string)
-		return(0);
-	c = tosearch;
+	if (!string)
+		return (0);
 	str = (char *)string;
-	while (*str != c && *str != 0)
+	while (*str != tosearch && *str != 0)
 		str++;
-	if (*str == c)
+	if (*str == tosearch)
 		return (str);
 	else
 		return (NULL);
