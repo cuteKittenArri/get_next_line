@@ -6,7 +6,7 @@
 /*   By: stmuller <stmuller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/02 15:25:06 by stmuller          #+#    #+#             */
-/*   Updated: 2025/11/02 21:33:46 by stmuller         ###   ########.fr       */
+/*   Updated: 2025/11/04 00:57:32 by stmuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strjoin(char *s1, char *s2)
 	size_t	i;
 	size_t	j;
 
+	if(!s1 || !s2)
+		return(0);
 	i = ft_strlen(s1) + ft_strlen(s2);
 	str = malloc((i + 1) * sizeof(char));
 	if (!str)
@@ -42,6 +44,8 @@ size_t	ft_strlen(char *str)
 {
 	size_t	i;
 
+	if(!str)
+		return(0);
 	i = 0;
 	while (str[i])
 		i++;
@@ -87,6 +91,8 @@ char	*ft_strchr(const char *string, int tosearch)
 	char			*str;
 	unsigned char	c;
 
+	if(!string)
+		return(0);
 	c = tosearch;
 	str = (char *)string;
 	while (*str != c && *str != 0)

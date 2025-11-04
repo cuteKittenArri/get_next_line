@@ -6,7 +6,7 @@
 /*   By: stmuller <stmuller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/02 15:25:19 by stmuller          #+#    #+#             */
-/*   Updated: 2025/11/02 21:32:34 by stmuller         ###   ########.fr       */
+/*   Updated: 2025/11/04 00:05:16 by stmuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,9 @@ char	*ft_strchr(const char *string, int tosearch);
 size_t	ft_strlen(char *str);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
 #endif
