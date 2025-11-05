@@ -6,13 +6,13 @@
 /*   By: stmuller <stmuller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/02 15:24:52 by stmuller          #+#    #+#             */
-/*   Updated: 2025/11/04 02:05:54 by stmuller         ###   ########.fr       */
+/*   Updated: 2025/11/04 17:53:19 by stmuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_free(char *buffer, char *buf)
+char	*cat_buffer(char *buffer, char *buf)
 {
 	char	*tmp;
 
@@ -83,8 +83,7 @@ char	*reader(int fd, char *buffer_main)
 			free(buffer);
 			return (NULL);
 		}
-		buffer[read_r] = 0;
-		buffer_main = ft_free(buffer_main, buffer);
+		buffer_main = cat_buffer(buffer_main, buffer);
 		if (ft_strchr(buffer, '\n'))
 			break ;
 	}
